@@ -1,0 +1,97 @@
+<!doctype html>
+<!-- Generated from docs-src\web-access.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Web access - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="getting-started.html">Getting started</a></li>
+      <li><a href="console.html">The console</a></li>
+      <li><a href="users.html">Users and clients</a></li>
+      <li><a href="client-login.html">Client app and login</a></li>
+      <li><a href="apps.html">App assigning</a></li>
+      <li><a href="printing.html">Printing</a></li>
+      <li><a class="on" href="web-access.html">Web access</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>Web access</h1>
+<p class="lead">Users can work from a web browser with nothing installed. Set it up on the console's <b>Web</b> page.</p>
+
+<div class="card">
+  <h2>Start the web service</h2>
+  <ol>
+    <li>Open <b>Web</b>.</li>
+    <li>Choose a port: <b>Auto Select</b> (picks a free port between 5000 and 5300) or <b>Manual Select</b> and type one (for example 443), then click <b>Save</b>.</li>
+    <li>Click <b>Start Web Service</b>. ELIX opens the port in Windows Firewall.</li>
+    <li>If your hosting provider has its own firewall, open the same port there too.</li>
+  </ol>
+  <p><b>Stop</b> disconnects everyone and keeps the service off after a reboot until you start it again. <b>Restart</b> briefly disconnects users and also repairs the port's firewall rule.</p>
+  <p>The pill next to the port shows whether the portal is secured: <b>HTTPS</b> with the domain and days left, or <b>Not secured (http)</b>. Click it to manage the certificate.</p>
+</div>
+
+<div class="card">
+  <h2>Connected Web Users</h2>
+  <p>Shows who is signed in through the browser: user, IP address (local network or internet), browser or device, and how long they've been connected. It also shows whether they are active or idle.</p>
+  <p>The disconnect button closes that user's browser session. Their Windows session stays signed in, so their programs keep running and they can sign back in.</p>
+</div>
+
+<div class="card" id="https">
+  <h2>Free HTTPS certificate</h2>
+  <p>Web &rarr; <b>Free SSL Certificate</b> gets a free certificate from Let's Encrypt, so users see the padlock and no warnings.</p>
+  <h3>Before you start</h3>
+  <ul>
+    <li>A domain name (for example <code>remote.yourcompany.com</code>) points to the server's public IP address.</li>
+    <li>Ports <b>80</b> and <b>443</b> are open in Windows Firewall and in any provider firewall, and nothing else uses port 80 (for example IIS).</li>
+    <li>Run it on the gateway or a standalone server, not an application server.</li>
+  </ul>
+  <h3>Generate</h3>
+  <ol>
+    <li>Enter the <b>Administrator Email</b> and the <b>domain name(s)</b>.</li>
+    <li>Choose the <b>Key Algorithm</b> (RSA is the most compatible).</li>
+    <li>Click <b>Generate a free valid HTTPS certificate</b>. The web service briefly moves to port 80 while Let's Encrypt checks the domain, then switches to HTTPS on port 443.</li>
+  </ol>
+  <p>Certificates last 90 days and renew automatically when fewer than 25 days are left (port 80 must still be reachable then). Back up <code>C:\Program Files\Elix\current\certs</code>.</p>
+</div>
+
+<div class="card">
+  <h2>Session Configuration</h2>
+  <p>How browser sessions behave: clipboard, glyph cache, <b>Printer Download</b>, async input, session sharing and the maximum number of guests. Also the default folder, appearance (wallpaper, font smoothing, window drag, menu animations, Aero, mouse motion, visual theme), colour depth and a program to start on sign-in.</p>
+</div>
+
+<div class="card">
+  <h2>Server Configuration</h2>
+  <p>Connection and performance: the option panel users see (clipboard, file manager), server appearance, image quality and format, file upload and download limits, and advanced options (image compression, bitmap cache, ignore certificate errors, async channels and updates, off-screen cache).</p>
+  <p><b>Show Domain Field</b> adds a Domain box to the sign-in page. Turn it on when users sign in with domain accounts.</p>
+</div>
+
+<div class="card" id="login">
+  <h2>Signing in from a browser</h2>
+  <ol>
+    <li>Open the address you were given, starting with <b>https://</b>, for example <code>https://remote.yourcompany.com</code>, or <code>https://remote.yourcompany.com:5000</code> when not on port 443.</li>
+    <li>Enter your user name and password (and domain, if shown) and click <b>Connect</b>.</li>
+    <li>Users with assigned apps get the ELIX panel; everyone else gets the full desktop.</li>
+  </ol>
+  <h3>Option panel</h3>
+  <ul>
+    <li><b>Clipboard</b>: copy and paste between your PC and the session. The browser may ask once for permission to read the clipboard; click <b>Allow</b>.</li>
+    <li><b>File Manager</b>: upload files (right-click an empty area) and download files (right-click a file).</li>
+    <li><b>Reconnect</b> and <b>Disconnect</b>.</li>
+  </ul>
+</div>
+
+    <div class="pager"><a href="printing.html">&larr; Printing</a> <a href="settings.html">Settings &rarr;</a></div>
+  </article>
+</div>
+</body>
+</html>

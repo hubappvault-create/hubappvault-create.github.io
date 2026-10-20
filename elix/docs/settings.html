@@ -1,0 +1,122 @@
+<!doctype html>
+<!-- Generated from docs-src\settings.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Settings - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="getting-started.html">Getting started</a></li>
+      <li><a href="console.html">The console</a></li>
+      <li><a href="users.html">Users and clients</a></li>
+      <li><a href="client-login.html">Client app and login</a></li>
+      <li><a href="apps.html">App assigning</a></li>
+      <li><a href="printing.html">Printing</a></li>
+      <li><a href="web-access.html">Web access</a></li>
+      <li><a class="on" href="settings.html">Settings</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>Settings</h1>
+<p class="lead">Everything that controls how the server behaves. Pick a section on the left of the Settings page; only the right-hand side scrolls.</p>
+
+<div class="card">
+  <h2>Account</h2>
+  <p>Change the console's <b>Master Password</b> and set a <b>Quick-Unlock PIN</b>. See <a href="console.html">The console &rarr; Your account</a>.</p>
+</div>
+
+<div class="card">
+  <h2>Session Management</h2>
+  <h3>Connection Settings</h3>
+  <ul>
+    <li><b>Reconnection</b>: end disconnected sessions after a set time, limit how long a session or an idle session may last, or end all of a user's sessions when they disconnect.</li>
+    <li><b>User connection</b>: when the same user signs in twice, end the first session, block the second, or allow several sessions.</li>
+    <li><b>Only generated client will allow the login</b>: users can only sign in with an ELIX client file.</li>
+    <li><b>Turn on MAC address filtering</b>: only approved computers can connect (managed under MAC Address Filter).</li>
+  </ul>
+  <h3>Permission Control</h3>
+  <p>Set folder permissions for users and groups: allow or deny read, write and execute, and choose whether permissions are inherited from the parent folder.</p>
+</div>
+
+<div class="card">
+  <h2>License</h2>
+  <p>Activate, check or renew your license and see which features it includes.</p>
+</div>
+
+<div class="card">
+  <h2>Windows Tools</h2>
+  <p>Shortcuts to Windows' own tools: Services, Computer Management, Task Scheduler, Event Viewer, Control Panel, Local Users and Groups, Active Directory Users and Computers, Group Policy Editor and Registry Editor.</p>
+</div>
+
+<div class="card">
+  <h2>Firewall Configuration</h2>
+  <p>Block or allow IP addresses. Filter the list by <b>All</b>, <b>Blocked</b> or <b>Allowed</b>.</p>
+  <ul>
+    <li><b>Blocked</b> addresses can't connect or sign in.</li>
+    <li>With <b>Allowed</b> addresses in use, only those can connect; everyone else is refused.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Login Protection</h2>
+  <p>Stops password-guessing attacks on Remote Desktop: after too many failed sign-ins, the address is blocked. See the <b>Blocked IPs</b> and <b>Recent Failed Logons</b>, and unblock an address if needed.</p>
+</div>
+
+<div class="card">
+  <h2>Access Log</h2>
+  <p>Recent sign-ins that were refused, and why. You can choose to notify users when they are denied.</p>
+</div>
+
+<div class="card">
+  <h2>Backup</h2>
+  <ul>
+    <li><b>Backup Sources</b>: add the folders and files to back up.</li>
+    <li><b>Backup Destination</b>: a local or network drive, or <b>Google Drive</b>. Connecting Google Drive opens your browser to sign in and allow access. ELIX can only see the files it creates there.</li>
+    <li><b>Schedule Backup</b>: turn on automatic backups and choose when.</li>
+    <li><b>Backup Now</b>: run a backup immediately.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>Export &amp; Restore</h2>
+  <p>Export the console's configuration to a file, and restore it on this or another server (for example after reinstalling Windows).</p>
+</div>
+
+<div class="card">
+  <h2>Updates</h2>
+  <p>Check for a new ELIX version, read what's new, and install it. Users are briefly disconnected while the services restart.</p>
+</div>
+
+<div class="card">
+  <h2>Two-Factor Authentication <span style="font-weight:400;color:var(--muted)">(license add-on)</span></h2>
+  <p>Users confirm their identity with a second step when signing in. Set it up under <b>Server Setting</b>, manage enrolled users under <b>User Management</b>, and exempt trusted users with the <b>White List</b>.</p>
+</div>
+
+<div class="card">
+  <h2>Geo Block <span style="font-weight:400;color:var(--muted)">(license add-on)</span></h2>
+  <p>Refuse connections from chosen countries or regions. Choose the regions and which ports to protect.</p>
+</div>
+
+<div class="card">
+  <h2>MAC Address Filter <span style="font-weight:400;color:var(--muted)">(license add-on)</span></h2>
+  <p>Shown when MAC address filtering is on in Session Management. Add the MAC addresses of the computers that may connect.</p>
+</div>
+
+<div class="card">
+  <h2>Restart Services</h2>
+  <p>Restart the ELIX services on the server. Use it when something stops responding. Users may be disconnected briefly.</p>
+</div>
+
+    <div class="pager"><a href="web-access.html">&larr; Web access</a> <a href="troubleshooting.html">Troubleshooting &rarr;</a></div>
+  </article>
+</div>
+</body>
+</html>

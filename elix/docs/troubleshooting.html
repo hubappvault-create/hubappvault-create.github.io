@@ -1,0 +1,88 @@
+<!doctype html>
+<!-- Generated from docs-src\troubleshooting.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Troubleshooting - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="getting-started.html">Getting started</a></li>
+      <li><a href="console.html">The console</a></li>
+      <li><a href="users.html">Users and clients</a></li>
+      <li><a href="client-login.html">Client app and login</a></li>
+      <li><a href="apps.html">App assigning</a></li>
+      <li><a href="printing.html">Printing</a></li>
+      <li><a href="web-access.html">Web access</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a class="on" href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>Troubleshooting</h1>
+<p class="lead">Common problems and fixes. If you're still stuck, <a href="../support/">contact support</a>.</p>
+
+<div class="card">
+  <h2>The console or services aren't working</h2>
+  <ul>
+    <li><b>Windows update pending</b>: let it finish, then restart the server.</li>
+    <li><b>Antivirus blocking ELIX</b>: allow <code>C:\Program Files\Elix</code> in your antivirus, or pause it briefly to test.</li>
+    <li><b>"Configuration service is offline"</b>: click <b>Retry</b>. If it stays, use Settings &rarr; <b>Restart Services</b>, or restart the server.</li>
+  </ul>
+</div>
+
+<div class="card">
+  <h2>License won't activate (computer ID changed)</h2>
+  <p>Being connected to several networks at once (Wi-Fi and Ethernet, or several Wi-Fi networks) can change the computer's ID. Disconnect all but one stable connection (preferably Ethernet), restart, and activate again. If it still fails, contact support with your license details.</p>
+</div>
+
+<div class="card">
+  <h2>A user sees the desktop instead of their apps (or no panel)</h2>
+  <ol>
+    <li>In the client's login window, click <b>Clear Save Data</b>, confirm, close the login window and open it again.</li>
+    <li>Still wrong: on the server, remove all of the user's apps, have them sign out, assign the apps again, and sign in again.</li>
+  </ol>
+  <p>New or removed apps only show after the user signs out and back in.</p>
+</div>
+
+<div class="card" id="printing">
+  <h2>Printing problems</h2>
+  <table>
+    <tr><th>Remote Printer missing or failing</th><td>Dashboard &rarr; Printer &rarr; <b>Remove</b>. Restart the <b>Print Spooler</b> service (Windows Tools &rarr; Services). Then <b>Install</b> the printer again and test.</td></tr>
+    <tr><th>User signed in twice</th><td>Close the other sessions and sign in again.</td></tr>
+    <tr><th>Wrong client type</th><td>Printing needs the <b>Seamless</b> or <b>Remote App</b> client type. Generate a new client file with one of those.</td></tr>
+    <tr><th>ELIX services stopped</th><td>Settings &rarr; <b>Restart Services</b>.</td></tr>
+    <tr><th>Half-page or cheque prints come out wrong for everyone</th><td>Usually Windows settings, not ELIX: often after a power cut or Windows update. Check the paper size in the printer's <b>Printing preferences</b> and the app's <b>Print Setup</b>, restart the printer, and sign out and back in.</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Several users can't sign in at once</h2>
+  <p>Check the ELIX services are running (Settings &rarr; Restart Services). Also check Session Management &rarr; User connection isn't set to allow only one session.</p>
+</div>
+
+<div class="card">
+  <h2>Web access</h2>
+  <h3>The website times out</h3>
+  <p>The port is blocked. On the console's Web page check the service is running, then click <b>Restart Web Service</b>: it re-creates the Windows Firewall rule. If it still times out, open the port in your hosting provider's firewall.</p>
+  <h3>"This page isn't working" / empty response</h3>
+  <p>The address was opened with <code>http://</code>. With a certificate installed the portal only answers on <code>https://</code>.</p>
+  <h3>Certificate warning in the browser</h3>
+  <p>Open the portal by its domain name, not the server's IP address. The certificate is for the domain.</p>
+  <h3>"Incorrect username or password" with the right password</h3>
+  <p>On a domain server, users sign in with their domain account. Turn on <b>Show Domain Field</b> (Web &rarr; Server Configuration) and enter the domain on the sign-in page.</p>
+  <h3>The browser keeps asking about the clipboard</h3>
+  <p>Click <b>Allow</b> once. If you clicked Block, re-allow it from the padlock icon next to the address.</p>
+</div>
+
+    <div class="pager"><a href="settings.html">&larr; Settings</a> <span></span></div>
+  </article>
+</div>
+</body>
+</html>

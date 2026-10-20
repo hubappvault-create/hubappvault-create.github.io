@@ -1,0 +1,71 @@
+<!doctype html>
+<!-- Generated from docs-src\client-login.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Client app and login - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="getting-started.html">Getting started</a></li>
+      <li><a href="console.html">The console</a></li>
+      <li><a href="users.html">Users and clients</a></li>
+      <li><a class="on" href="client-login.html">Client app and login</a></li>
+      <li><a href="apps.html">App assigning</a></li>
+      <li><a href="printing.html">Printing</a></li>
+      <li><a href="web-access.html">Web access</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>Client app and login</h1>
+<p class="lead">How a user installs the ELIX client on their own computer and signs in with their client file.</p>
+
+<div class="card">
+  <h2>1. Get the client installer</h2>
+  <p>The client installer (<code>ClientSetup&hellip;.exe</code>) is placed on the server's public desktop when ELIX is installed. Send it to your users together with their <code>.rhost</code> file (see <a href="users.html#generate">Generate a client file</a>).</p>
+</div>
+
+<div class="card">
+  <h2>2. Install it on the user's PC</h2>
+  <ol>
+    <li>Run <code>ClientSetup&hellip;.exe</code> and allow it to make changes.</li>
+    <li>Wait for "Please wait while Windows configures ClientSetup" to finish.</li>
+  </ol>
+</div>
+
+<div class="card">
+  <h2>3. Sign in</h2>
+  <ol>
+    <li>Double-click the user's <code>.rhost</code> file (for example <code>Test1.rhost</code>).</li>
+    <li>Enter the password (and the user name if the file doesn't include one).</li>
+    <li>Click <b>Connect</b>.</li>
+  </ol>
+  <table>
+    <tr><th>User has assigned apps</th><td>The ELIX panel opens with only those apps. Double-click an app to start it.</td></tr>
+    <tr><th>No assigned apps</th><td>The full Windows desktop opens.</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Domain users</h2>
+  <p>On a domain server, enter the <b>Domain Name</b> when you generate the client file. Without it, sign-in can fail even with the right password.</p>
+</div>
+
+<div class="card">
+  <h2>Signing in from a browser instead</h2>
+  <p>Users can also work from a web browser without installing anything. See <a href="web-access.html#login">Web access &rarr; Signing in from a browser</a>.</p>
+</div>
+
+    <div class="pager"><a href="users.html">&larr; Users and clients</a> <a href="apps.html">App assigning &rarr;</a></div>
+  </article>
+</div>
+</body>
+</html>

@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- Generated from docs-src\printing.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Printing - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="getting-started.html">Getting started</a></li>
+      <li><a href="console.html">The console</a></li>
+      <li><a href="users.html">Users and clients</a></li>
+      <li><a href="client-login.html">Client app and login</a></li>
+      <li><a href="apps.html">App assigning</a></li>
+      <li><a class="on" href="printing.html">Printing</a></li>
+      <li><a href="web-access.html">Web access</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>Printing</h1>
+<p class="lead">ELIX installs a virtual printer on the server called <b>Remote Printer</b>. When a user prints to it, the document comes out on their own computer.</p>
+
+<div class="card">
+  <h2>Install the Remote Printer</h2>
+  <ol>
+    <li>Open the <b>Dashboard</b> and find the <b>Printer</b> card.</li>
+    <li>Click <b>Install</b> and confirm.</li>
+    <li>When it's done, the card shows the printer as available.</li>
+  </ol>
+  <p>Use <b>View</b> to see the server's printers and <b>Remove</b> to uninstall the Remote Printer.</p>
+</div>
+
+<div class="card">
+  <h2>Printing from a session</h2>
+  <ol>
+    <li>In the app, choose <b>Print</b> (or press <b>Ctrl + P</b>).</li>
+    <li>Pick <b>Remote Printer</b> and click <b>Print</b>.</li>
+    <li>On the user's PC the document appears as set by the client file's <b>Universal Printer Option</b>: a PDF preview, a saved PDF, or straight to their default printer.</li>
+  </ol>
+  <div class="note warn">Printing to the Remote Printer works with the <b>Seamless</b> and <b>Remote App</b> client types, not the Remote Desktop client type.</div>
+</div>
+
+<div class="card">
+  <h2>Printing from a browser session</h2>
+  <p>Turn on <b>Printer Download</b> in Web &rarr; Session Configuration. When a user prints to the Remote Printer, their browser downloads the document as a PDF.</p>
+</div>
+
+<div class="card">
+  <h2>Special paper (half page, cheques)</h2>
+  <p>Custom paper sizes must exist on the server as well as on the user's PC. If half-page or cheque prints come out wrong for everyone, check the paper size in the printer's preferences and in the application's Print Setup. See <a href="troubleshooting.html#printing">Troubleshooting &rarr; Printing</a>.</p>
+</div>
+
+    <div class="pager"><a href="apps.html">&larr; App assigning</a> <a href="web-access.html">Web access &rarr;</a></div>
+  </article>
+</div>
+</body>
+</html>

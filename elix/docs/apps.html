@@ -1,0 +1,65 @@
+<!doctype html>
+<!-- Generated from docs-src\apps.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>App assigning - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="getting-started.html">Getting started</a></li>
+      <li><a href="console.html">The console</a></li>
+      <li><a href="users.html">Users and clients</a></li>
+      <li><a href="client-login.html">Client app and login</a></li>
+      <li><a class="on" href="apps.html">App assigning</a></li>
+      <li><a href="printing.html">Printing</a></li>
+      <li><a href="web-access.html">Web access</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>App assigning</h1>
+<p class="lead">Publish applications and folders, then choose which users or groups get them. A user with assigned apps sees only those apps in the ELIX panel, never the full desktop.</p>
+
+<div class="card">
+  <h2>Publish an application</h2>
+  <ol>
+    <li>Open <b>App Assigning</b>.</li>
+    <li>Click <b>Application</b> (bottom of the Published column).</li>
+    <li>Click the folder button next to the path and choose the program's <code>.exe</code>.</li>
+    <li>Enter a <b>Display Name</b> users will see (for example "Invoice System").</li>
+    <li>Optional: add <b>command-line</b> arguments to start the app in a particular mode.</li>
+    <li>Click <b>Save</b>. The app appears under <b>Published</b>.</li>
+  </ol>
+  <p>Use <b>Folder</b> the same way to publish a folder. <b>Test</b> starts the app on the server so you can check it works. The pencil and bin buttons edit or remove the selected item.</p>
+</div>
+
+<div class="card">
+  <h2>Assign it</h2>
+  <ol>
+    <li>Click the published app to select it.</li>
+    <li>Click <b>Add User</b>. The Windows "Select Users or Groups" window opens.</li>
+    <li>Type a name, or use <b>Advanced &rarr; Find Now</b> to list users and groups. Hold <b>Ctrl</b> to pick several.</li>
+    <li>Click <b>OK</b>. They appear under <b>Selected</b>.</li>
+  </ol>
+  <p>Click a user to see all the apps they have under <b>Assigned Applications</b>. Assigning to a group gives the app to everyone in it.</p>
+</div>
+
+<div class="card">
+  <h2>When changes take effect</h2>
+  <div class="note warn">Users who are signed in must <b>sign out and sign back in</b> to see new or removed apps.</div>
+  <p>Remove all of a user's apps to give them the normal Windows desktop again.</p>
+</div>
+
+    <div class="pager"><a href="client-login.html">&larr; Client app and login</a> <a href="printing.html">Printing &rarr;</a></div>
+  </article>
+</div>
+</body>
+</html>

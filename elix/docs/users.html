@@ -1,0 +1,89 @@
+<!doctype html>
+<!-- Generated from docs-src\users.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Users and clients - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="getting-started.html">Getting started</a></li>
+      <li><a href="console.html">The console</a></li>
+      <li><a class="on" href="users.html">Users and clients</a></li>
+      <li><a href="client-login.html">Client app and login</a></li>
+      <li><a href="apps.html">App assigning</a></li>
+      <li><a href="printing.html">Printing</a></li>
+      <li><a href="web-access.html">Web access</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>Users and clients</h1>
+<p class="lead">Every person who connects needs a Windows user on the server. Then you give them a client file (or the web address) to sign in with.</p>
+
+<div class="card">
+  <h2>Create a user</h2>
+  <ol>
+    <li>Open <b>Users</b> and click <b>Create User</b>.</li>
+    <li>Enter the user name and password.</li>
+    <li>Keep <b>Add to Remote Desktop Users</b> ticked. Without it the user can't connect.</li>
+    <li>Click <b>Create</b>.</li>
+  </ol>
+  <div class="note">You can also use Windows' own tools: <b>Settings &rarr; Windows Tools &rarr; Local Users and Groups</b> (or Active Directory Users and Computers on a domain). Add the user to the <b>Remote Desktop Users</b> group.</div>
+</div>
+
+<div class="card">
+  <h2>The Users page</h2>
+  <p>Lists the server's users with their session. Filter with <b>Active</b>, <b>Disconnected</b>, <b>Not Connected</b> or <b>All</b>, or search by name. Only the table scrolls; the filters and buttons stay in place.</p>
+  <p>The <b>&hellip;</b> button on a row opens:</p>
+  <table>
+    <tr><th>Disconnect</th><td>Ends the connection. The user's programs keep running and they can reconnect.</td></tr>
+    <tr><th>Shadow</th><td>View or control the user's session (to help them).</td></tr>
+    <tr><th>Send message</th><td>Pop up a message on the user's screen.</td></tr>
+    <tr><th>User Setting</th><td>Restrictions for this user (below).</td></tr>
+    <tr><th>Log Off</th><td>Signs the user out and closes their programs. Unsaved work is lost.</td></tr>
+    <tr><th>Delete account</th><td>Removes the Windows user.</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>User Setting</h2>
+  <table>
+    <tr><th>Desktop Security</th><td>Hide or block parts of Windows: recycle bin, Task Manager, recent files, folder options, Control Panel, CMD, printer deletion and system tools.</td></tr>
+    <tr><th>Disk Control</th><td>Choose which drives the user can see.</td></tr>
+    <tr><th>Application Control</th><td>Choose which programs the user may run.</td></tr>
+    <tr><th>Working Hours</th><td>Allow sign-in only at set times.</td></tr>
+  </table>
+  <p>Changes apply the next time the user signs in.</p>
+</div>
+
+<div class="card" id="generate">
+  <h2>Generate a client file</h2>
+  <p>A client file (<code>.rhost</code>) holds the server's address and settings. The user opens it with the ELIX client app to sign in. Click <b>Generate Client</b> on the Users page; the wizard has three steps.</p>
+  <h3>1. Setup Security</h3>
+  <p>Choose the <b>User Security Level</b> and extras such as encryption, a show/hide password button, and hiding the server's IP address and port from the user.</p>
+  <h3>2. Setup Local Resources</h3>
+  <p>Choose what from the user's PC is available in the session: disks, clipboard, printers, sound, COM ports, USB devices, smart cards, a shared folder, and how the keyboard behaves. <b>Universal Printer Option</b> sets what happens when they print: <b>Preview with local PDF Reader</b>, <b>Save as PDF</b> or <b>Direct Print</b>.</p>
+  <h3>3. Fill General Details</h3>
+  <ul>
+    <li><b>Server Address</b> and <b>Port Number</b> (Auto Fill can fill these in).</li>
+    <li><b>Domain Name</b>: required when users sign in with a domain account.</li>
+    <li><b>Login</b>: one user, several users, or none (the user types their name).</li>
+    <li><b>Client Type</b>: <b>Remote Desktop Client</b> (full desktop), <b>Seamless Client</b> or <b>Remote App Client</b> (apps appear like local programs).</li>
+  </ul>
+  <p>Click <b>Generate</b> and choose where to save. With several users, ELIX saves one file per user in a folder. Send each user their file.</p>
+  <div class="note warn">Use the Seamless or Remote App client type for users who need to print to the Remote Printer.</div>
+</div>
+
+    <div class="pager"><a href="console.html">&larr; The console</a> <a href="client-login.html">Client app and login &rarr;</a></div>
+  </article>
+</div>
+</body>
+</html>

@@ -1,0 +1,77 @@
+<!doctype html>
+<!-- Generated from docs-src\console.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>The console - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a href="getting-started.html">Getting started</a></li>
+      <li><a class="on" href="console.html">The console</a></li>
+      <li><a href="users.html">Users and clients</a></li>
+      <li><a href="client-login.html">Client app and login</a></li>
+      <li><a href="apps.html">App assigning</a></li>
+      <li><a href="printing.html">Printing</a></li>
+      <li><a href="web-access.html">Web access</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>The console</h1>
+<p class="lead">The ELIX Remote Access Console is where you manage the server. Pages open from the bar on the left.</p>
+
+<div class="card">
+  <h2>Left bar</h2>
+  <table>
+    <tr><th>Home</th><td>The Dashboard: server status at a glance.</td></tr>
+    <tr><th>Users</th><td>Windows users, their sessions, and client files. See <a href="users.html">Users and clients</a>.</td></tr>
+    <tr><th>App Assigning</th><td>Publish apps and assign them. See <a href="apps.html">App assigning</a>.</td></tr>
+    <tr><th>Settings</th><td>Everything else. See <a href="settings.html">Settings</a>.</td></tr>
+    <tr><th>Web</th><td>Browser access. See <a href="web-access.html">Web access</a>.</td></tr>
+  </table>
+  <p>The footer has links to these docs and to support, and a light / dark theme switch.</p>
+</div>
+
+<div class="card">
+  <h2>Dashboard</h2>
+  <h3>Status strip</h3>
+  <p>Shows how many users are active and whether the ELIX services and the web service are running.</p>
+  <h3>System resources</h3>
+  <p>Live CPU, memory and disk use of the server.</p>
+  <h3>Active sessions</h3>
+  <p>Everyone signed in right now, with their computer, IP address and how long they have been connected. Use the buttons on a row to open the user on the Users page or to <b>Disconnect</b> them. With many users the list scrolls inside the card.</p>
+  <h3>Printer</h3>
+  <p>Install, view or remove the <b>Remote Printer</b>. See <a href="printing.html">Printing</a>.</p>
+  <h3>License</h3>
+  <p>License type and days left. <b>View details</b> opens Settings &rarr; License.</p>
+</div>
+
+<div class="card">
+  <h2>Quick access and PC information</h2>
+  <p>Shortcuts for common jobs (such as <b>Restart Services</b> and the firewall), and the server's details: IP address, RDP port, computer name and Windows version.</p>
+  <h3>Changing the RDP port</h3>
+  <p>You can change the Remote Desktop port from PC information. Windows only switches to the new port after the server restarts. After that, connect using the new port and update any client files that use the old one.</p>
+</div>
+
+<div class="card">
+  <h2>Your account</h2>
+  <p>The account icon at the top right and <b>Settings &rarr; Account</b> manage how you open the console:</p>
+  <ul>
+    <li><b>Master Password</b>: the password that protects the console. After changing it, use the new password next time.</li>
+    <li><b>Quick-Unlock PIN</b>: a shorter PIN for opening the console. Set the master password first. If you forget the PIN, sign in with the password and set a new PIN.</li>
+  </ul>
+</div>
+
+    <div class="pager"><a href="getting-started.html">&larr; Getting started</a> <a href="users.html">Users and clients &rarr;</a></div>
+  </article>
+</div>
+</body>
+</html>

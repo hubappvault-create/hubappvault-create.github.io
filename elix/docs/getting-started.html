@@ -1,0 +1,73 @@
+<!doctype html>
+<!-- Generated from docs-src\getting-started.html by build-docs.ps1 - edit the source, not this file. -->
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Getting started - ELIX Remote Access docs</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<div class="docs">
+  <nav>
+    <a class="home" href="../">&larr; ELIX Remote Access</a>
+    <ol>
+      <li><a href="index.html">Overview</a></li>
+      <li><a class="on" href="getting-started.html">Getting started</a></li>
+      <li><a href="console.html">The console</a></li>
+      <li><a href="users.html">Users and clients</a></li>
+      <li><a href="client-login.html">Client app and login</a></li>
+      <li><a href="apps.html">App assigning</a></li>
+      <li><a href="printing.html">Printing</a></li>
+      <li><a href="web-access.html">Web access</a></li>
+      <li><a href="settings.html">Settings</a></li>
+      <li><a href="troubleshooting.html">Troubleshooting</a></li>
+    </ol>
+  </nav>
+  <article>
+<h1>Getting started</h1>
+<p class="lead">What the server needs, how to install ELIX, and what happens on first start.</p>
+
+<div class="card">
+  <h2>Requirements (server)</h2>
+  <table>
+    <tr><th>Operating system</th><td>Windows Server 2016, 2019, 2022 or 2025, or Windows 10 / 11</td></tr>
+    <tr><th>Memory</th><td>8 GB RAM or more recommended (more for many users)</td></tr>
+    <tr><th>Disk</th><td>20 GB or more free on drive C:</td></tr>
+    <tr><th>CPU</th><td>Enough for the number of users you expect</td></tr>
+    <tr><th>Permissions</th><td>A local administrator account to install and run the console</td></tr>
+    <tr><th>Printing (optional)</th><td>Printer drivers, if you use printer redirection</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Install</h2>
+  <ol>
+    <li>Get the latest ELIX installer (<code>.msi</code>) from your supplier.</li>
+    <li>Double-click it on the server and click <b>Yes</b> when Windows asks for permission.</li>
+    <li>The installer adds everything ELIX needs (the .NET runtimes, WebView2 and the Visual C++ runtime) and installs to <code>C:\Program Files\Elix</code>.</li>
+    <li>When it finishes, open <b>ELIX Remote Access Console</b> from the desktop or the Start menu.</li>
+  </ol>
+  <div class="note">On first start the console sets up its background services and turns on Remote Desktop. If a red <b>Configuration service is offline</b> bar appears, wait a few seconds and click <b>Retry</b>.</div>
+</div>
+
+<div class="card">
+  <h2>Your license</h2>
+  <p>Open <b>Settings &rarr; License</b> to activate or check your license. The Dashboard's License card shows the type and the days left.</p>
+  <table>
+    <tr><th>Trial</th><td>All features for a limited number of days.</td></tr>
+    <tr><th>Rental</th><td>Renewed every year. Includes updates, fixes and support. Add-on features can be bought separately.</td></tr>
+    <tr><th>Perpetual</th><td>One-time purchase, no expiry. Add-on features can be bought separately. Support needs an active support license.</td></tr>
+  </table>
+</div>
+
+<div class="card">
+  <h2>Updating and uninstalling</h2>
+  <p>Install updates from <b>Settings &rarr; Updates</b>. Uninstalling ELIX keeps your configuration and license, so a reinstall picks up where you left off.</p>
+</div>
+
+    <div class="pager"><a href="index.html">&larr; Overview</a> <a href="console.html">The console &rarr;</a></div>
+  </article>
+</div>
+</body>
+</html>
