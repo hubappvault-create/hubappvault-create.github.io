@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Documentation - ELIX Remote Access</title>
+<link rel="stylesheet" href="../../assets/site.css">
+</head>
+<body>
+<main>
+  <div class="crumbs"><a href="../">&larr; ELIX Remote Access</a></div>
+  <h1>Documentation</h1>
+  <p class="lead">Setting up and running ELIX Remote Access on a Windows server.</p>
+
+  <div class="card">
+    <ul class="toc">
+      <li><a href="#install">Install</a></li>
+      <li><a href="#users">Users and sessions</a></li>
+      <li><a href="#apps">App assigning</a></li>
+      <li><a href="#web">Web access</a></li>
+      <li><a href="#https">HTTPS certificate</a></li>
+      <li><a href="#updates">Updates</a></li>
+      <li><a href="#troubleshooting">Troubleshooting</a></li>
+    </ul>
+  </div>
+
+  <div class="card" id="install">
+    <h2>Install</h2>
+    <ol>
+      <li>Run the installer (<code>.msi</code>) on the server as an administrator. ELIX installs to <code>C:\Program Files\Elix</code>.</li>
+      <li>Open <b>ELIX Remote Access Console</b> from the desktop or Start menu.</li>
+      <li>The console sets up its background services on first start. If the red "Configuration service is offline" bar appears, wait a few seconds and click Retry.</li>
+    </ol>
+    <p>Uninstalling keeps your configuration and license, so a reinstall picks up where you left off.</p>
+  </div>
+
+  <div class="card" id="users">
+    <h2>Users and sessions</h2>
+    <p>The <b>Users</b> page lists the server's Windows accounts with their session state (Active, Disconnected, Not Connected).
+      Use the <b>&hellip;</b> menu on a row to disconnect, shadow, log off or change that user's settings.
+      <b>Generate Client</b> creates a connection file for the desktop client.</p>
+  </div>
+
+  <div class="card" id="apps">
+    <h2>App assigning</h2>
+    <p>On <b>App Assigning</b>, publish an application or folder, then add the users or groups who may use it.
+      A user with assigned apps signs in to the ELIX panel showing only those apps, instead of the full Windows desktop.
+      Remove all of a user's apps to give them the normal desktop again.</p>
+  </div>
+
+  <div class="card" id="web">
+    <h2>Web access</h2>
+    <p>Users can work from a browser with no client installed.</p>
+    <ol>
+      <li>Open <b>Web</b> in the console and choose a port: <b>Auto Select</b> (5000&ndash;5300) or <b>Manual Select</b> (for example 443), then <b>Save</b>.</li>
+      <li>Click <b>Start Web Service</b>. ELIX opens that port in Windows Firewall.</li>
+      <li>If your hosting provider has its own firewall, open the same port there too.</li>
+      <li>Users open <code>https://your-domain</code> (or <code>https://your-domain:port</code> when not on 443). Always type <b>https://</b>.</li>
+    </ol>
+    <p><b>Connected Web Users</b> shows who is signed in through the browser, and can disconnect a user (their Windows session stays signed in).</p>
+  </div>
+
+  <div class="card" id="https">
+    <h2>HTTPS certificate</h2>
+    <p>Web &rarr; <b>Free SSL Certificate</b> gets a free certificate from Let's Encrypt.</p>
+    <h3>Before you start</h3>
+    <ul>
+      <li>Your domain's DNS points to this server's public IP address.</li>
+      <li>Ports <b>80</b> and <b>443</b> are open (Windows Firewall and any provider firewall), and nothing else uses port 80 (for example IIS).</li>
+      <li>Run it on the gateway or a standalone server, not an application server.</li>
+    </ul>
+    <p>The web service briefly moves to port 80 while Let's Encrypt checks the domain, then switches to HTTPS on port 443.
+      Certificates last 90 days and renew automatically when fewer than 25 days are left. Port 80 must still be reachable then.
+      Back up <code>C:\Program Files\Elix\current\certs</code> regularly.</p>
+  </div>
+
+  <div class="card" id="updates">
+    <h2>Updates</h2>
+    <p>Settings &rarr; <b>Updates</b> checks for a new version and installs it. Users connected during an update are disconnected briefly while the services restart.</p>
+  </div>
+
+  <div class="card" id="troubleshooting">
+    <h2>Troubleshooting</h2>
+    <h3>The website times out</h3>
+    <p>The port is blocked. Check the console's Web page shows the service running, then click <b>Restart Web Service</b> &mdash; it re-creates the Windows Firewall rule.
+      If it still times out, open the port in your hosting provider's firewall.</p>
+    <h3>"This page isn't working" / empty response</h3>
+    <p>The address was opened with <code>http://</code>. With a certificate installed the portal only answers <code>https://</code>.</p>
+    <h3>Certificate warning in the browser</h3>
+    <p>Open the portal by its domain name, not the server's IP address &mdash; the certificate is for the domain.</p>
+    <h3>"Incorrect username or password" on a domain server</h3>
+    <p>On a domain controller or domain member, users sign in with their domain account. Turn on the domain field
+      (Web &rarr; Server Configuration) so users can enter their domain on the sign-in page.</p>
+  </div>
+</main>
+</body>
+</html>
